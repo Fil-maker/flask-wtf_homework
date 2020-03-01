@@ -30,5 +30,22 @@ def list_prof(type_):
     return render_template('index.html', req=1, work_list=work_list)
 
 
+@app.route('/auto_answer')
+@app.route('/answer')
+def answer():
+    data = {
+        'surname': "Зубарев",
+        'name': "Филипп",
+        'education': "Низинькое)",
+        'profession': "Програмер",
+        'sex': "male",
+        'motivation': "Мечтал мечтать",
+        'ready': True,
+    }
+    send_vals = list(map(lambda x: x, data.values()))
+    return render_template('auto_answer.html', link=url_for('static', filename='css/mars_style.css'), values=send_vals,
+                           size=len(data.keys()))
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
