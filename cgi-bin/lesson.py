@@ -19,5 +19,16 @@ def training(profession):
     return render_template('login.html', training_station='Научные симуляторы', idm=img1)
 
 
+@app.route('/list_prof/<type_>')
+def list_prof(type_):
+    work_list = ['инженер-исследователь', 'пилот', 'строитель', 'экзобиолог', 'врач', 'инженер по терроформированию',
+                 'климатолог', 'специалист по радиационной защите', 'астрогеолог', 'гляциолог',
+                 'инженер жизнеобеспечения', 'метеоролог', 'оператор марсохода', 'киберинженер', 'штурман',
+                 'пилот дронов']
+    if type_ == 'ol':
+        return render_template('index.html', req=2, work_list=work_list)
+    return render_template('index.html', req=1, work_list=work_list)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
