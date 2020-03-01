@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
@@ -19,7 +19,7 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('base.html', title='Авторизация')
+    return render_template('base.html', title='Авторизация', link=url_for('static', filename='css/mars_style.css'))
 
 
 @app.route('/training/<profession>')
@@ -65,6 +65,13 @@ def login():
     if form.validate_on_submit():
         print(1)
     return render_template('double_login.html', title='Авторизация', form=form,
+                           link=url_for('static', filename='css/mars_style.css'))
+
+
+@app.route('/distribution')
+def distribution():
+    passengers = ['Me', 'My Friend', 'My-strAnGE-friend']
+    return render_template('distribution.html', size=len(passengers), passengers=passengers, title="Размещение",
                            link=url_for('static', filename='css/mars_style.css'))
 
 
