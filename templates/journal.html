@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h3 id="work_h">Журнал работ</h3>
+    {% for num in range(count)%}
+    <h4>Работа #{{num + 1}}</h4>
+    <table class="data_table">
+        <tr>
+            <th class="table_header">Название работы</th>
+            <th class="table_header">Фамилия и имя ответственного</th>
+            <th class="table_header">продолжительность в часах</th>
+            <th class="table_header">список id команды</th>
+            <th class="table_header">завершена</th>
+        </tr>
+        <tr>
+            <td class="table_content">{{name[num]}}</td>
+            <td class="table_content">{{team_leader[num]}}</td>
+            <td class="table_content">{{duration[num]}}</td>
+            <td class="table_content">{{team_id[num]}}</td>
+            <td class="table_content", id="is_finished">{{finished[num]}}</td>
+        </tr>
+    </table>
+    {%endfor%}
+</div>
+{%endblock%}

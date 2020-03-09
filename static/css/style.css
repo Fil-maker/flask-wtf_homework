@@ -1,0 +1,37 @@
+                                 h4.motto{
+    margin-left: 20px;
+    color: grey;
+}
+
+#auto{
+    display: inline-block;
+}
+
+#ima{
+    display: inline-block;
+}
+
+table.data_table{
+    margin-bottom: 20px;
+    border: 1px solid grey;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#work_h{
+    text-align: center;
+}
+
+th.table_header{
+    border: 1px solid grey;
+    background: rgb(187,187,187);
+}
+
+td.table_content{
+    border: 1px solid grey;
+    background: rgb(183, 132, 167)
+}
+
+#is_finished{
+    background: rgb(255, 182, 193)
+}
