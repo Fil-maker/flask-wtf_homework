@@ -11,6 +11,27 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 def main():
     db_session.global_init("db/mars.sqlite")
+    # session = db_session.create_session()
+    # user = User()
+    # user.email = 'exam@gmail.com'
+    # user.speciality = 'i'
+    # user.position = 'am'
+    # user.age = 16
+    # user.address = 'home'
+    # user.name = "fill"
+    # user.surname = 'zub'
+    # user.hashed_password = 'qwerty'
+    #
+    # jobs = Jobs()
+    # jobs.is_finished = True
+    # jobs.collaborators = '1, 2'
+    # jobs.team_leader = 1
+    # jobs.job = 'install pyqt5'
+    # jobs.work_size = 16
+    #
+    # session.add(jobs)
+    # session.add(user)
+    # session.commit()
     app.run()
 
 
