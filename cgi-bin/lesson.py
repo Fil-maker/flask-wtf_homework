@@ -75,5 +75,22 @@ def distribution():
                            link=url_for('static', filename='css/mars_style.css'))
 
 
+@app.route('/table/<string:gen>/<int:age>')
+def table(gen, age):
+    if gen == 'female':
+        if age >= 21:
+            r, g, b = 128, 64, 64
+        else:
+            r, g, b = 128, 100, 100
+    if gen == 'male':
+        if age >= 21:
+            r, g, b = 64, 64, 128
+        else:
+            r, g, b = 100, 100, 128
+    if age >= 21:
+        return render_template('table.html', r=r, g=g, b=b, ref=url_for('static', filename='img/old.jpg'))
+    return render_template('table.html', r=r, g=g, b=b, ref=url_for('static', filename='img/yong.jpg'))
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
